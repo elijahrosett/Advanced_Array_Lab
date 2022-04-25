@@ -118,7 +118,7 @@ function findMexicanFood(){
 }
 
 let mexicanFood = findMexicanFood();
-console.log('Mexican Foods: ', mexicanFood)
+console.log( mexicanFood)
 
 
 
@@ -140,23 +140,25 @@ function findVegetarian(){
 }
 
 let vegetarianFood = findVegetarian();
-console.log("Vegetarian Foods: ", vegetarianFood)
+console.log("Number 1", vegetarianFood)
 
 //2. Create a function that will return all dishes with the cuisine type of "Italian" and a serving size greater than 5.
 //Filter
 
 function filterItalian(){
 let italianCuisine = dishes.filter(function(el){
-   if (el.cuisine === 'Italian'){
+   if (el.cuisine === 'Italian' && el.servings > 5){
        return true;
    }
    else{
        return false
    }
 })
+return italianCuisine
 }
-let italianFilteredCuisine = filterItalian()
-console.log(italianFilteredCuisine)
+
+
+console.log("Number 2", filterItalian())
 //3. Create a function that will return only dishes whose serving id number matches their serving count.
 //Filter
 
@@ -171,7 +173,7 @@ let servingMatch = dishes.filter(function(el){
 
     
 })
-console.log(servingMatch)
+console.log("number 3", servingMatch)
 
 //4. Create a function that will return only dishes whose serving count is even.
 //Filter
@@ -187,9 +189,10 @@ let evenServingCount = dishes.filter(function(el){
 
    
 })
+return evenServingCount
 }
-let servingCount = servingCountFilter()
-console.log(servingCount)
+
+console.log("Number 4", servingCountFilter())
 
 
 //5. Create a function that will return dishes whose ingredients array INCLUDES "chickpea".
@@ -207,7 +210,7 @@ let hasChickpea = dishes.filter(function(el){
 
 
 })
-console.log(hasChickpea)
+console.log("Number 5", hasChickpea)
 
 
 
@@ -220,7 +223,7 @@ function cuisineName(cuisine){
     })
     return namesOnly;
 }
-console.log(cuisineName())
+console.log("Number 6a", cuisineName())
 
 
 
@@ -235,7 +238,7 @@ function dishRenamer(){
     })
     return newName
 }
-console.log(dishRenamer())
+console.log("Number 7", dishRenamer())
 //8. Create a function that will append the cuisine type to the start of the dish's name. Then, return only the Vegetarian dish objects. So this function should return objects 11-13 with their names changed to "Vegetarian Lasagna", "Vegetarian Falafel", "Vegetarian Chili"
 //Map, Filter
 function veggieFilter(){
@@ -243,6 +246,7 @@ function veggieFilter(){
         return el.cuisine + " " + el.name;
     })
     console.log(veggieDishName)
+    
     let filteredDishes = veggieDishName.filter(function(el){
         if (el.includes("Vegetarian")){
             return true;
@@ -251,9 +255,9 @@ function veggieFilter(){
             return false;
         }
     })
-    console.log(filteredDishes)
+    return filteredDishes
 }
-console.log(veggieFilter())
+console.log("number 8", veggieFilter())
 // BONUS:
 //9. Create a function that will return dishes whose ingredients array INCLUDES "tomato" OR "cheese".
 //Hint: You do not want to check the array's indexes to find out what the array INCLUDES.
@@ -270,7 +274,7 @@ function tomatoCheeseFilter(){
             return false
         }
     })
-    console.log(tomatoOrCheeseDishes)
+    console.log( "Number 9",tomatoOrCheeseDishes)
     }
 //10. Create a function that will return the total serving count of all dishes.
 function servingsOnly(dishes){
@@ -283,27 +287,27 @@ function servingsOnly(dishes){
     })
     return sum
 }
-console.log(servingsOnly(dishes))
+console.log("number 10", servingsOnly(dishes))
 
 //11. Create a function that will return an array of any objects that do not share a cuisine type with any other objects.
 
-let dishesWithOneCuisine = oddOneOut(dishes, filterFunction)
+// let dishesWithOneCuisine = oddOneOut(dishes, filterFunction)
 
-function oddOneOut(arrayToModify, functionToModify){
-    let newArray = []
-for (i = 0, i < arrayToModify.length; i++){
-    let modifiedValue = modifyingFunction(arrayToModify[i]);
-    newArray.push(modifiedValue)
-
-
-}
+// function oddOneOut(arrayToModify, functionToModify){
+//     let newArray = []
+// for (i = 0, i < arrayToModify.length; i++){
+//     let modifiedValue = modifyingFunction(arrayToModify[i]);
+//     newArray.push(modifiedValue)
 
 
+// }
 
-} 
 
-function filterFunction(){
-    let singleCuisine = dishes.filter(function())
 
-}
+// } 
+
+// function filterFunction(){
+//     let singleCuisine = dishes.filter(function())
+
+// }
 

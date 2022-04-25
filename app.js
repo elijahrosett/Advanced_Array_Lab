@@ -245,7 +245,7 @@ function veggieFilter(){
     let veggieDishName = dishes.map(function(el){
         return el.cuisine + " " + el.name;
     })
-    console.log(veggieDishName)
+    
     
     let filteredDishes = veggieDishName.filter(function(el){
         if (el.includes("Vegetarian")){
@@ -257,7 +257,7 @@ function veggieFilter(){
     })
     return filteredDishes
 }
-console.log("number 8", veggieFilter())
+console.log("Number 8", veggieFilter())
 // BONUS:
 //9. Create a function that will return dishes whose ingredients array INCLUDES "tomato" OR "cheese".
 //Hint: You do not want to check the array's indexes to find out what the array INCLUDES.
@@ -274,8 +274,11 @@ function tomatoCheeseFilter(){
             return false
         }
     })
-    console.log( "Number 9",tomatoOrCheeseDishes)
-    }
+    return tomatoOrCheeseDishes
+}
+console.log( "Number 9",tomatoCheeseFilter())
+    
+    
 //10. Create a function that will return the total serving count of all dishes.
 function servingsOnly(dishes){
     newArray = []
